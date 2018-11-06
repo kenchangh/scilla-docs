@@ -808,12 +808,12 @@ ListUtils
       (*Library*)
       let f =
         func (a : Int32) =>
-          sha256hash a
+          builtin sha256hash a
       
       (*Contract transition*)
       (*Assume l as a list [1 -> 2 -> 3 -> NIL]*)
       transition
-         hash_list_int32 = @list_map Int32;
+         hash_list_int32 = @list_map Int32 ByStr32;
          hashed_list = hash_list_int32 f l;
       end
 
